@@ -7,8 +7,8 @@ import dashboardPreview from "@/assets/dashboard-preview.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-glow-top">
-      <div className="container relative z-10 mx-auto px-6 py-20">
+    <section className="relative min-h-screen flex items-center pt-6 overflow-hidden bg-glow-top">
+      <div className="container relative z-10 mx-auto px-6 pt-10 pb-20">
         <div className="flex flex-col items-center text-center space-y-12 max-w-5xl mx-auto">
           {/* Logo - Background removed via script */}
           <motion.div
