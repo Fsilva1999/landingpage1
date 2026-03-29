@@ -15,6 +15,7 @@ const plans = [
       "Relatórios básicos",
       "Suporte por e-mail",
     ],
+    link: "https://pay.hotmart.com/V104958225I?off=iq4gs6ln&email=victorbonella.2015%40gmail.com",
   },
   {
     name: "Pro",
@@ -29,6 +30,7 @@ const plans = [
       "Relatórios avançados",
       "Automação completa",
     ],
+    link: "https://pay.hotmart.com/V104958225I?off=zaid5ebc&bid=1774751735473",
   },
   {
     name: "Anual",
@@ -43,6 +45,7 @@ const plans = [
       "Todas as funcionalidades",
       "Economia de 30%",
     ],
+    link: "https://pay.hotmart.com/V104958225I?off=35jqscc3&bid=1774751757375",
   },
 ];
 
@@ -102,7 +105,7 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <a href="https://www.emprestfacil.app" className="block w-full">
+              <a href={plan.link} className="block w-full">
                 <Button
                   className={`w-full rounded-xl py-6 text-base font-semibold ${
                     plan.popular
