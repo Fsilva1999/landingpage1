@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Básico",
-    price: "R$35",
+    price: "R$25",
     period: "/mês",
     description: "Ideal para começar",
     popular: false,
@@ -18,7 +18,7 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "R$55",
+    price: "R$29,99",
     period: "/mês",
     description: "Mais popular",
     popular: true,
@@ -32,7 +32,7 @@ const plans = [
   },
   {
     name: "Anual",
-    price: "R$355",
+    price: "R$250",
     period: "/ano",
     description: "Melhor custo-benefício",
     popular: false,
@@ -41,7 +41,7 @@ const plans = [
       "Clientes ilimitados",
       "Suporte prioritário",
       "Todas as funcionalidades",
-      "Economia de 46%",
+      "Economia de 30%",
     ],
   },
 ];
