@@ -15,7 +15,7 @@ const plans = [
       "Relatórios básicos",
       "Suporte por e-mail",
     ],
-    link: "https://pay.hotmart.com/V104958225I?off=iq4gs6ln&email=victorbonella.2015%40gmail.com",
+    link: "https://pay.kiwify.com.br/QG8xsOg",
   },
   {
     name: "Pro",
@@ -30,7 +30,7 @@ const plans = [
       "Relatórios avançados",
       "Automação completa",
     ],
-    link: "https://pay.hotmart.com/V104958225I?off=zaid5ebc&bid=1774751735473",
+    link: "https://pay.kiwify.com.br/Z2VjrEH",
   },
   {
     name: "Anual",
@@ -45,7 +45,7 @@ const plans = [
       "Todas as funcionalidades",
       "Economia de 30%",
     ],
-    link: "https://pay.hotmart.com/V104958225I?off=35jqscc3&bid=1774751757375",
+    link: "https://pay.kiwify.com.br/6rL3Z4X",
   },
 ];
 
