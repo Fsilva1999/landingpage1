@@ -120,7 +120,7 @@
     flex-shrink:0;
     position:relative;
     /* desktop */
-    width:280px;height:500px;
+    width:460px;height:750px;
     perspective:1400px;
   }
 
@@ -181,27 +181,27 @@
   /* ── PHONE ── */
   .ph-frame{
     position:absolute;inset:0;
-    background:linear-gradient(165deg,#242428,#0c0c10);
-    border-radius:40px;
-    border:1.5px solid #3a3a42;
-    box-shadow:0 0 0 1px #505058,10px 20px 60px rgba(0,0,0,.8),0 0 50px rgba(37,99,235,.2),inset 0 1px 0 rgba(255,255,255,.06);
+    background:linear-gradient(165deg,#1c1c20,#0a0a0e);
+    border-radius:44px;
+    border:2.5px solid #2a2a30;
+    box-shadow:0 0 0 1.5px #404048,12px 24px 70px rgba(0,0,0,.85),0 0 60px rgba(37,99,235,.15),inset 0 1px 0 rgba(255,255,255,.08);
     overflow:hidden;
     display:flex;flex-direction:column;
   }
   /* side buttons */
-  .ph-frame::before{content:'';position:absolute;top:88px;right:-4px;width:4px;height:54px;background:#2a2a30;border-radius:0 3px 3px 0}
-  .ph-frame::after{content:'';position:absolute;top:78px;left:-4px;width:4px;height:34px;background:#2a2a30;border-radius:3px 0 0 3px;box-shadow:0 48px 0 #2a2a30}
+  .ph-frame::before{content:'';position:absolute;top:110px;right:-5px;width:4px;height:60px;background:#222228;border-radius:0 3px 3px 0}
+  .ph-frame::after{content:'';position:absolute;top:96px;left:-5px;width:4px;height:40px;background:#222228;border-radius:3px 0 0 3px;box-shadow:0 54px 0 #222228}
 
   /* status bar */
   .ph-sb{
     flex-shrink:0;
-    height:34px;background:#1565c0;
+    height:44px;background:transparent;
     display:flex;align-items:center;justify-content:space-between;
-    padding:0 18px;font-size:.6rem;color:#fff;font-weight:700;
+    padding:0 24px;font-size:.65rem;color:#fff;font-weight:700;
     position:relative;z-index:5;
   }
-  .ph-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:86px;height:26px;background:#0c0c10;border-radius:0 0 16px 16px;z-index:6}
-  .ph-sb-icons{display:flex;align-items:center;gap:4px}
+  .ph-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:32px;background:#0a0a0e;border-radius:0 0 20px 20px;z-index:6}
+  .ph-sb-icons{display:flex;align-items:center;gap:5px}
 
   /* screen */
   .ph-screen{
@@ -221,25 +221,27 @@
   .ph-tools{display:flex;gap:7px;color:#4a5f7a;font-size:.72rem}
 
   /* 4-card grid */
-  .ph-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:7px;flex-shrink:0}
+  .ph-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:7px;flex-shrink:0}
   .ph-card{
-    background:#0f1e38;border-radius:10px;
-    padding:7px 6px 5px;text-align:center;
-    border:1px solid rgba(37,99,235,.18);
+    background:transparent;
+    text-align:center;
+    display:flex;flex-direction:column;align-items:center;
   }
   /* donut */
-  .dw{display:flex;justify-content:center;margin-bottom:4px}
-  .donut{width:42px;height:42px;flex-shrink:0}
-  .d-bg{fill:none;stroke:#1a2a3e;stroke-width:5}
-  .d-fg{fill:none;stroke-width:5;stroke-linecap:round;transform-origin:50% 50%;transform:rotate(-90deg)}
+  .dw{position:relative;width:66px;height:66px;margin-bottom:6px;display:flex;justify-content:center;align-items:center;}
+  .donut{position:absolute;inset:0;width:100%;height:100%;}
+  .dw-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .dw-lbl{font-size:.38rem;color:#7b91b5;text-transform:uppercase;letter-spacing:.05em;line-height:1.1;margin-bottom:2px}
+  .dw-val{font-size:.54rem;font-weight:800;color:#fff;line-height:1.1}
+  .d-bg{fill:none;stroke:#111b2d;stroke-width:3.5}
+  .d-fg{fill:none;stroke-width:3.5;stroke-linecap:round;transform-origin:50% 50%;transform:rotate(-90deg)}
   .dg .d-fg{stroke:#00C896}
   .dr .d-fg{stroke:#ef4444}
   .do .d-fg{stroke:#f59e0b}
-  .db .d-fg{stroke:#3b82f6}
+  .db .d-fg{stroke:#00C896} /* The 4th one is green in image 3 */
 
-  .ph-lbl{font-size:.4rem;color:#4a5f7a;text-transform:uppercase;letter-spacing:.07em;line-height:1.2;margin-bottom:1px}
-  .ph-val{font-size:.58rem;font-weight:800;color:#dde6f0;line-height:1.1;font-family:'Inter',sans-serif}
-  .ph-sub{font-size:.44rem;font-weight:700;margin-top:1px;line-height:1}
+  .ph-lbl{font-size:.4rem;color:#7b91b5;text-transform:uppercase;letter-spacing:.05em;line-height:1.2;margin-bottom:1px}
+  .ph-sub{font-size:.5rem;font-weight:700;margin-top:1px;line-height:1}
   .cg{color:#00C896}.cr{color:#ef4444}.co{color:#f59e0b}.cb{color:#3b82f6}
 
   /* chart panel */
@@ -439,16 +441,14 @@
     .hero-text{max-width:100%}
     .hero-btns{justify-content:center}
     .scene-wrap{
-      width:200px;height:355px;
-      /* on mobile the scene is smaller */
+      width:320px;height:520px;
     }
-    /* tighter text */
     h1{font-size:clamp(1.6rem,6vw,2.4rem)}
     .hero-text .sub{font-size:.9rem}
   }
   @media(max-width:480px){
-    .scene-wrap{width:175px;height:310px}
-    .hero-sticky-inner{align-items:flex-start;padding-top:0}
+    .scene-wrap{width:280px;height:460px}
+    .hero-sticky-inner{align-items:flex-start;padding-top:20px}
   }
   @media(max-width:480px){
     .stat-item{min-width:120px}
@@ -496,21 +496,25 @@
   }
   .demo-phone-shell{
     width:200px;
-    height:380px;
-    background:linear-gradient(165deg,#1e1e24,#0c0c10);
-    border-radius:32px;
+    height:324px;
+    background:#09101f;
+    border-radius:24px;
     border:1.5px solid #3a3a46;
     box-shadow:
       0 0 0 1px #444,
       8px 18px 50px rgba(0,0,0,.7),
       0 0 30px rgba(37,99,235,.14);
     overflow:hidden;
-    display:flex;flex-direction:column;
     position:relative;
     transition:transform .3s,box-shadow .3s;
   }
+  .demo-phone-shell img{
+    width:100%;height:100%;object-fit:contain;
+    filter:contrast(1.05) brightness(1.1);
+    image-rendering:-webkit-optimize-contrast;
+  }
   .demo-phone-shell:hover{
-    transform:translateY(-8px) scale(1.03);
+    transform:translateY(-8px) scale(1.05);
     box-shadow:0 0 0 1px #555,12px 28px 60px rgba(0,0,0,.8),0 0 45px rgba(37,99,235,.3);
   }
   .demo-sb{
@@ -638,21 +642,7 @@
 <nav>
   <a href="https://www.emprestfacil.app/" class="nav-logo">
     <!-- Logo SVG (EmprestFácil E$ mark) -->
-    <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="40" height="40" rx="9" fill="url(#navLogoGrad)"/>
-      <defs>
-        <linearGradient id="navLogoGrad" x1="0" y1="0" x2="40" y2="40">
-          <stop offset="0%" stop-color="#2563EB"/>
-          <stop offset="100%" stop-color="#0ea5e9"/>
-        </linearGradient>
-      </defs>
-      <!-- E shape -->
-      <path d="M10 10 H24 V14 H14 V18 H22 V22 H14 V26 H24 V30 H10 Z" fill="white" opacity=".9"/>
-      <!-- $ strike -->
-      <line x1="27" y1="8" x2="27" y2="32" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
-      <line x1="23" y1="8" x2="31" y2="8" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".7"/>
-      <line x1="23" y1="32" x2="31" y2="32" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".7"/>
-    </svg>
+    <img class="nav-logo-icon" src="./logo.png" alt="EmprestFácil Logo" style="width:32px;height:32px;object-fit:contain;border-radius:0;background:transparent;">
     <span class="nav-logo-text">EmprestFácil</span>
   </a>
   <ul>
@@ -753,116 +743,8 @@
               </div>
             </div>
 
-            <div class="ph-screen">
-              <!-- app top bar -->
-              <div class="ph-topbar">
-                <div class="ph-appbadge">
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                    <path d="M3 12.5 L7.5 3 L12 12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="4.8" y1="9.5" x2="10.2" y2="9.5" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div class="ph-tools">☀ ⋮ ☰</div>
-              </div>
-
-              <!-- 4 donuts -->
-              <div class="ph-grid">
-                <!-- EM DIA -->
-                <div class="ph-card">
-                  <div class="dw">
-                    <svg class="donut dg" viewBox="0 0 42 42">
-                      <circle class="d-bg" cx="21" cy="21" r="17"/>
-                      <circle class="d-fg" cx="21" cy="21" r="17" stroke-dasharray="107 0"/>
-                    </svg>
-                  </div>
-                  <div class="ph-lbl">Em dia</div>
-                  <div class="ph-val">R$ 10.255</div>
-                  <div class="ph-lbl" style="margin-top:1px">STATUS REAL</div>
-                  <div class="ph-sub cg">100%</div>
-                </div>
-                <!-- EM ATRASO -->
-                <div class="ph-card">
-                  <div class="dw">
-                    <svg class="donut dr" viewBox="0 0 42 42">
-                      <circle class="d-bg" cx="21" cy="21" r="17"/>
-                      <circle class="d-fg" cx="21" cy="21" r="17" stroke-dasharray="16 91"/>
-                    </svg>
-                  </div>
-                  <div class="ph-lbl">Em atraso</div>
-                  <div class="ph-val">R$ 5.090</div>
-                  <div class="ph-lbl" style="margin-top:1px">INADIMPLÊNCIA</div>
-                  <div class="ph-sub cr">15.2%</div>
-                </div>
-                <!-- A VENCER -->
-                <div class="ph-card">
-                  <div class="dw">
-                    <svg class="donut do" viewBox="0 0 42 42">
-                      <circle class="d-bg" cx="21" cy="21" r="17"/>
-                      <circle class="d-fg" cx="21" cy="21" r="17" stroke-dasharray="24 83"/>
-                    </svg>
-                  </div>
-                  <div class="ph-lbl">A vencer</div>
-                  <div class="ph-val">R$ 1.410</div>
-                  <div class="ph-lbl" style="margin-top:1px">CONVERSÃO</div>
-                  <div class="ph-sub co">22.4%</div>
-                </div>
-                <!-- LUCRO -->
-                <div class="ph-card">
-                  <div class="dw">
-                    <svg class="donut db" viewBox="0 0 42 42">
-                      <circle class="d-bg" cx="21" cy="21" r="17"/>
-                      <circle class="d-fg" cx="21" cy="21" r="17" stroke-dasharray="13 94"/>
-                    </svg>
-                  </div>
-                  <div class="ph-lbl">Lucro est.</div>
-                  <div class="ph-val">R$ 2.590</div>
-                  <div class="ph-lbl" style="margin-top:1px">CRESCIMENTO</div>
-                  <div class="ph-sub cg">12.5%</div>
-                </div>
-              </div>
-
-              <!-- Evolução Financeira chart -->
-              <div class="ph-chart">
-                <div class="ph-ch-header">
-                  <div class="ph-ch-title">
-                    <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><polyline points="0,8 2.5,5 4,5.5 6.5,2 9,2.5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                    Evolução Financeira
-                  </div>
-                  <div class="ph-legend">
-                    <span class="ph-leg"><span class="ldot" style="background:#3b82f6"></span>EMPRESTADO</span>
-                    <span class="ph-leg"><span class="ldot" style="background:#00C896"></span>RECEBIDO</span>
-                  </div>
-                </div>
-                <svg class="ph-svg" viewBox="0 0 220 50" preserveAspectRatio="none">
-                  <!-- y grid -->
-                  <line x1="26" y1="4"  x2="220" y2="4"  stroke="#1a2a3e" stroke-width=".7"/>
-                  <line x1="26" y1="18" x2="220" y2="18" stroke="#1a2a3e" stroke-width=".7"/>
-                  <line x1="26" y1="32" x2="220" y2="32" stroke="#1a2a3e" stroke-width=".7"/>
-                  <line x1="26" y1="46" x2="220" y2="46" stroke="#1a2a3e" stroke-width=".7"/>
-                  <!-- y labels -->
-                  <text x="0" y="7"  font-size="6" fill="#2d4060" font-family="Inter,sans-serif">20k</text>
-                  <text x="0" y="21" font-size="6" fill="#2d4060" font-family="Inter,sans-serif">15k</text>
-                  <text x="0" y="35" font-size="6" fill="#2d4060" font-family="Inter,sans-serif">10k</text>
-                  <text x="0" y="48" font-size="6" fill="#2d4060" font-family="Inter,sans-serif">5k</text>
-                  <defs>
-                    <linearGradient id="aBlue" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#2563eb" stop-opacity=".6"/>
-                      <stop offset="100%" stop-color="#2563eb" stop-opacity=".04"/>
-                    </linearGradient>
-                    <linearGradient id="aGreen" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#00C896" stop-opacity=".5"/>
-                      <stop offset="100%" stop-color="#00C896" stop-opacity=".03"/>
-                    </linearGradient>
-                  </defs>
-                  <!-- blue area spike -->
-                  <path d="M26,46 L60,45.5 L95,45 L130,44 L165,42 L190,34 L210,12 L220,3 L220,46 Z" fill="url(#aBlue)"/>
-                  <path d="M26,46 L60,45.5 L95,45 L130,44 L165,42 L190,34 L210,12 L220,3" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <!-- green recebido stays low -->
-                  <path d="M26,46 L95,46 L155,46 L190,45.5 L210,44 L220,42 L220,46 Z" fill="url(#aGreen)"/>
-                  <path d="M26,46 L95,46 L155,46 L190,45.5 L210,44 L220,42" fill="none" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="ph-home-pill"><span></span></div>
-              </div>
+            <div class="ph-screen" style="padding:0;overflow:hidden;position:relative;background:#09101f;box-shadow: 0 0 40px rgba(37, 99, 235, 0.2);">
+              <img src="./dashboard.png" alt="Dashboard EmprestFácil" style="width:100%;height:100%;object-fit:fill;display:block;filter:contrast(1.1) brightness(1.2) saturate(1.1);image-rendering:-webkit-optimize-contrast;" />
             </div>
           </div>
         </div>
@@ -913,29 +795,7 @@
       <!-- Screen 1 — Dashboard -->
       <div class="demo-card">
         <div class="demo-phone-shell">
-          <div class="demo-sb"><span>12:42</span><span>▲▲🔋</span></div>
-          <div class="demo-screen">
-            <div class="demo-appbar">
-              <div class="demo-appicon"></div>
-              <div class="demo-apptools">☀ ⋮ ☰</div>
-            </div>
-            <div class="demo-title">Dashboard</div>
-            <div class="demo-sub-title">Visão geral dos seus empréstimos</div>
-            <div class="demo-quick-label">Ações Rápidas</div>
-            <div class="demo-quick-grid">
-              <div class="dq-btn"><span>👤+</span><small>Novo Cliente</small></div>
-              <div class="dq-btn"><span>➕</span><small>Novo Emprést.</small></div>
-              <div class="dq-btn"><span>💼</span><small>Empréstimos</small></div>
-              <div class="dq-btn"><span>👥</span><small>Clientes</small></div>
-            </div>
-            <div class="demo-metric-list">
-              <div class="dml-item blue"><div class="dml-icon">💼</div><div><div class="dml-lbl">TOTAL A RECEBER</div><div class="dml-val c-blue">R$ 6.700,90</div></div></div>
-              <div class="dml-item red"><div class="dml-icon">⚠️</div><div><div class="dml-lbl">EM ATRASO</div><div class="dml-val c-red">R$ 330,90</div></div></div>
-              <div class="dml-item orange"><div class="dml-icon">📈</div><div><div class="dml-lbl">PRESTES A VENCER</div><div class="dml-val c-orange">R$ 1.250,00</div></div></div>
-              <div class="dml-item green"><div class="dml-icon">✅</div><div><div class="dml-lbl">EM DIA</div><div class="dml-val c-green">R$ 5.120,00</div></div></div>
-              <div class="dml-item teal"><div class="dml-icon">👥</div><div><div class="dml-lbl">TOTAL DE CLIENTES</div><div class="dml-val c-blue">5</div></div></div>
-            </div>
-          </div>
+          <img src="./screen1.png" alt="Dashboard Principal" />
         </div>
         <div class="demo-label">📊 Dashboard Principal</div>
       </div>
@@ -943,46 +803,7 @@
       <!-- Screen 2 — Gráficos donuts -->
       <div class="demo-card">
         <div class="demo-phone-shell">
-          <div class="demo-sb"><span>12:42</span><span>▲▲🔋</span></div>
-          <div class="demo-screen">
-            <div class="demo-appbar"><div class="demo-appicon"></div><div class="demo-apptools">☀ ⋮ ☰</div></div>
-            <div class="demo-donuts-grid">
-              <div class="ddg-item">
-                <svg viewBox="0 0 80 80" width="70" height="70"><circle cx="40" cy="40" r="32" fill="none" stroke="#1a2a3e" stroke-width="9"/><circle cx="40" cy="40" r="32" fill="none" stroke="#00C896" stroke-width="9" stroke-linecap="round" stroke-dasharray="170 31" transform="rotate(-90 40 40)"/><text x="40" y="36" text-anchor="middle" font-size="8" fill="#aaa" font-family="Inter,sans-serif">EM DIA</text><text x="40" y="48" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold" font-family="Inter,sans-serif">R$ 5.120</text></svg>
-                <div class="ddg-pct" style="color:#00C896">63.8% STATUS REAL</div>
-              </div>
-              <div class="ddg-item">
-                <svg viewBox="0 0 80 80" width="70" height="70"><circle cx="40" cy="40" r="32" fill="none" stroke="#1a2a3e" stroke-width="9"/><circle cx="40" cy="40" r="32" fill="none" stroke="#ef4444" stroke-width="9" stroke-linecap="round" stroke-dasharray="33 168" transform="rotate(-90 40 40)"/><text x="40" y="36" text-anchor="middle" font-size="7" fill="#aaa" font-family="Inter,sans-serif">EM ATRASO</text><text x="40" y="48" text-anchor="middle" font-size="7" fill="white" font-weight="bold" font-family="Inter,sans-serif">R$ 1.656</text></svg>
-                <div class="ddg-pct" style="color:#ef4444">20.6% INADIMPL.</div>
-              </div>
-              <div class="ddg-item">
-                <svg viewBox="0 0 80 80" width="70" height="70"><circle cx="40" cy="40" r="32" fill="none" stroke="#1a2a3e" stroke-width="9"/><circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="9" stroke-linecap="round" stroke-dasharray="25 176" transform="rotate(-90 40 40)"/><text x="40" y="36" text-anchor="middle" font-size="7.5" fill="#aaa" font-family="Inter,sans-serif">A VENCER</text><text x="40" y="48" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold" font-family="Inter,sans-serif">R$ 1.250</text></svg>
-                <div class="ddg-pct" style="color:#f59e0b">15.6% CONVERSÃO</div>
-              </div>
-              <div class="ddg-item">
-                <svg viewBox="0 0 80 80" width="70" height="70"><circle cx="40" cy="40" r="32" fill="none" stroke="#1a2a3e" stroke-width="9"/><circle cx="40" cy="40" r="32" fill="none" stroke="#3b82f6" stroke-width="9" stroke-linecap="round" stroke-dasharray="24 177" transform="rotate(-90 40 40)"/><text x="40" y="36" text-anchor="middle" font-size="7" fill="#aaa" font-family="Inter,sans-serif">LUCRO EST.</text><text x="40" y="48" text-anchor="middle" font-size="7.5" fill="white" font-weight="bold" font-family="Inter,sans-serif">R$ 2.620</text></svg>
-                <div class="ddg-pct" style="color:#3b82f6">14.8% CRESCIMENTO</div>
-              </div>
-            </div>
-            <div class="demo-chart-mini">
-              <div style="font-size:.58rem;font-weight:700;color:#dde6f0;margin-bottom:5px;display:flex;align-items:center;gap:4px">
-                <span style="color:#3b82f6">~</span> Evolução Financeira
-                <span style="margin-left:auto;font-size:.42rem;color:#4a5f7a">● EMPRESTADO &nbsp; ● RECEBIDO</span>
-              </div>
-              <svg width="100%" height="55" viewBox="0 0 200 55" preserveAspectRatio="none">
-                <defs><linearGradient id="cBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2563eb" stop-opacity=".55"/><stop offset="100%" stop-color="#2563eb" stop-opacity=".04"/></linearGradient></defs>
-                <line x1="0" y1="14" x2="200" y2="14" stroke="#1a2a3e" stroke-width=".6"/>
-                <line x1="0" y1="28" x2="200" y2="28" stroke="#1a2a3e" stroke-width=".6"/>
-                <line x1="0" y1="42" x2="200" y2="42" stroke="#1a2a3e" stroke-width=".6"/>
-                <text x="0" y="12" font-size="7" fill="#2d4060" font-family="Inter,sans-serif">18000</text>
-                <text x="0" y="26" font-size="7" fill="#2d4060" font-family="Inter,sans-serif">13500</text>
-                <text x="0" y="40" font-size="7" fill="#2d4060" font-family="Inter,sans-serif">9000</text>
-                <path d="M26,52 L70,51 L110,50 L150,48 L175,38 L195,10 L200,4 L200,52Z" fill="url(#cBlue)"/>
-                <path d="M26,52 L70,51 L110,50 L150,48 L175,38 L195,10 L200,4" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round"/>
-                <path d="M26,52 L120,52 L175,51 L200,50" fill="none" stroke="#00C896" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
+          <img src="./screen2.png" alt="Análise Financeira" />
         </div>
         <div class="demo-label">📈 Análise Financeira</div>
       </div>
@@ -990,36 +811,7 @@
       <!-- Screen 3 — Empréstimos -->
       <div class="demo-card">
         <div class="demo-phone-shell">
-          <div class="demo-sb"><span>12:42</span><span>▲▲🔋</span></div>
-          <div class="demo-screen">
-            <div class="demo-appbar"><div class="demo-appicon"></div><div class="demo-apptools">☀ ⋮ ☰</div></div>
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
-              <span style="color:#7b91b5;font-size:.6rem">‹</span>
-              <div class="demo-title" style="margin:0">Empréstimos</div>
-            </div>
-            <div class="demo-sub-title" style="margin-bottom:7px">Gerencie seus empréstimos</div>
-            <div class="demo-4grid">
-              <div class="d4-card blue"><div class="d4-lbl">$ Total a Receber</div><div class="d4-val c-blue">R$ 7.729,90</div></div>
-              <div class="d4-card red"><div class="d4-lbl">⚠ Em Atraso <span class="d4-badge">2</span></div><div class="d4-val c-red">R$ 1.359,90</div></div>
-              <div class="d4-card orange"><div class="d4-lbl">🕐 Prestes a Vencer <span class="d4-badge">1</span></div><div class="d4-val c-orange">R$ 1.250,00</div></div>
-              <div class="d4-card green"><div class="d4-lbl">✅ Em Dia <span class="d4-badge green-badge">5</span></div><div class="d4-val c-green">R$ 5.120,00</div></div>
-            </div>
-            <div class="demo-search">🔍 Buscar por nome do cliente...</div>
-            <div class="demo-add-btn">+ Novo Empréstimo</div>
-            <div class="demo-section-label" style="color:#ef4444">⚠ Em Atraso &nbsp;<span class="d4-badge">2</span></div>
-            <div class="demo-emp-card">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px">
-                <span style="font-size:.7rem;font-weight:700;color:#fff">teste</span>
-                <span style="background:#ef4444;color:#fff;font-size:.45rem;padding:2px 6px;border-radius:50px;font-weight:700">Atrasado</span>
-              </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;font-size:.58rem">
-                <div><div style="color:#7b91b5">Emprestado</div><div style="color:#fff;font-weight:600">R$ 1.000,00</div></div>
-                <div><div style="color:#7b91b5">Total + Atraso</div><div style="color:#ef4444;font-weight:600">R$ 1.326,00</div></div>
-                <div><div style="color:#7b91b5">Pago</div><div style="color:#00C896;font-weight:600">R$ 0,00</div></div>
-                <div><div style="color:#7b91b5">Taxa de Juros</div><div style="color:#3b82f6;font-weight:600">30%</div></div>
-              </div>
-            </div>
-          </div>
+          <img src="./screen3.png" alt="Lista de Empréstimos" />
         </div>
         <div class="demo-label">💼 Lista de Empréstimos</div>
       </div>
@@ -1027,36 +819,7 @@
       <!-- Screen 4 — Registrar Pagamento -->
       <div class="demo-card">
         <div class="demo-phone-shell">
-          <div class="demo-sb"><span>12:42</span><span>▲▲🔋</span></div>
-          <div class="demo-screen" style="padding:8px 10px">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-              <div class="demo-title" style="margin:0;font-size:.8rem">Registrar Pagamento</div>
-              <span style="color:#7b91b5;font-size:.9rem">✕</span>
-            </div>
-            <div class="pay-summary">
-              <div class="pay-row"><span>Total + Atraso</span><span>R$ 504,00</span></div>
-              <div class="pay-row"><span>Pago</span><span class="c-green">R$ 0,00</span></div>
-              <div class="pay-row"><span>Ganhos (Juros)</span><span class="c-orange">R$ 204,00</span></div>
-              <div class="pay-row bold"><span>Restante (Capital)</span><span>R$ 504,00</span></div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:5px">
-              <div class="pay-field"><div class="pay-field-lbl">Valor pago *</div><div class="pay-field-val">R$ 204,00</div></div>
-              <div class="pay-field"><div class="pay-field-lbl">Data *</div><div class="pay-field-val">07/05/2026</div></div>
-              <div class="pay-field"><div class="pay-field-lbl">Nº Parcela</div><div class="pay-field-val">1</div></div>
-              <div class="pay-field"><div class="pay-field-lbl">Forma</div><div class="pay-field-val">📘 Pix ▾</div></div>
-            </div>
-            <div class="pay-juros-btn">
-              <div><div style="font-size:.5rem;font-weight:700;color:#f59e0b">📈 SOMENTE JUROS</div><div style="font-size:.42rem;color:#7b91b5">Liquidar rendimentos do período</div></div>
-              <div style="background:#f59e0b;color:#000;font-size:.48rem;font-weight:700;padding:3px 7px;border-radius:5px">Selecionar R$ 204,00</div>
-            </div>
-            <div class="pay-renew">
-              <span style="color:#f59e0b;font-size:.5rem">🔄 RENOVAR CONTRATO?</span>
-              <span style="font-size:.7rem">☑</span>
-            </div>
-            <div class="pay-venc-label">🕐 NOVO VENCIMENTO</div>
-            <div class="pay-venc-val">07/06/2026 📅</div>
-            <div class="pay-info">Ao renovar, o cliente paga os juros hoje e o empréstimo continua com o capital de R$ 300,00 para a nova data.</div>
-          </div>
+          <img src="./screen4.png" alt="Registrar Pagamento" />
         </div>
         <div class="demo-label">💳 Registrar Pagamento</div>
       </div>
