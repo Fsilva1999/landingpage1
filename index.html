@@ -35,7 +35,7 @@
     border-bottom:1px solid var(--border);
   }
   .nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
-  .nav-logo-icon{width:32px;height:32px;flex-shrink:0}
+  .nav-logo-icon{width:44px;height:44px;flex-shrink:0}
   .nav-logo-text{font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-.02em}
   .nav-logo-text span{color:var(--blueL)}
   nav ul{list-style:none;display:flex;gap:1.8rem}
@@ -51,8 +51,8 @@
   .nav-cta:hover{background:var(--blue2);transform:translateY(-1px)}
   @media(max-width:768px){nav ul{display:none}.nav-logo-text{font-size:1rem}}
 
-  /* ═══ HERO STICKY (220vh) ═══ */
-  .hero-sticky-outer{height:220vh;position:relative}
+  /* ═══ HERO STICKY ═══ */
+  .hero-sticky-outer{height:150vh;position:relative}
   .hero-sticky-inner{
     position:sticky;top:0;height:100vh;
     display:flex;align-items:center;justify-content:center;
@@ -275,7 +275,9 @@
     display:flex;flex-wrap:wrap;
     border-top:1px solid var(--border);border-bottom:1px solid var(--border);
     margin-bottom:5rem;
-    background:rgba(13,21,38,.7);backdrop-filter:blur(12px);
+    background:rgba(13,21,38,.9); /* More solid */
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
   }
   .stat-item{flex:1;min-width:160px;padding:2rem 1.5rem;text-align:center;border-right:1px solid var(--border)}
   .stat-item:last-child{border-right:none}
@@ -437,20 +439,19 @@
 
   /* ═══ RESPONSIVE HERO ═══ */
   @media(max-width:860px){
-    .hero-layout{flex-direction:column;gap:1.5rem;text-align:center;padding-top:72px;justify-content:flex-start;padding-bottom:1rem}
+    .hero-layout{flex-direction:column;gap:1.2rem;text-align:center;padding-top:80px;justify-content:flex-start;padding-bottom:1rem}
     .hero-text{max-width:100%}
     .hero-btns{justify-content:center}
     .scene-wrap{
-      width:320px;height:520px;
+      width:260px;height:424px;
     }
     h1{font-size:clamp(1.6rem,6vw,2.4rem)}
-    .hero-text .sub{font-size:.9rem}
+    .hero-text .sub{font-size:.9rem; margin-bottom: 1.2rem;}
+    .stats{backdrop-filter:none;-webkit-backdrop-filter:none;background:#0d1526;}
   }
   @media(max-width:480px){
-    .scene-wrap{width:280px;height:460px}
-    .hero-sticky-inner{align-items:flex-start;padding-top:20px}
-  }
-  @media(max-width:480px){
+    .scene-wrap{width:220px;height:358px}
+    .hero-sticky-inner{align-items:flex-start;padding-top:15px}
     .stat-item{min-width:120px}
   }
 
@@ -641,8 +642,8 @@
 <!-- ═══ NAV ═══ -->
 <nav>
   <a href="https://www.emprestfacil.app/" class="nav-logo">
-    <!-- Logo SVG (EmprestFácil E$ mark) -->
-    <img class="nav-logo-icon" src="./logo.png" alt="EmprestFácil Logo" style="width:32px;height:32px;object-fit:contain;border-radius:0;background:transparent;">
+    <!-- Logo with transparent background -->
+    <img class="nav-logo-icon" src="./logo.png" alt="EmprestFácil Logo" style="width:44px;height:44px;object-fit:contain;">
     <span class="nav-logo-text">EmprestFácil</span>
   </a>
   <ul>
@@ -650,7 +651,7 @@
     <li><a href="#como">Como funciona</a></li>
     <li><a href="#precos">Preços</a></li>
   </ul>
-  <a href="https://www.emprestfacil.app/" class="nav-cta">Começar grátis →</a>
+
 </nav>
 
 <!-- ═══ STICKY HERO ═══ -->
@@ -664,11 +665,7 @@
       <div class="hero-text">
         <div class="badge"><span class="badge-dot"></span> Para quem empresta e vende fiado</div>
         <h1>Gerencie clientes e cobranças com <em>inteligência e segurança</em></h1>
-        <p class="sub">A plataforma completa para automatizar cobranças, organizar seus clientes e ter controle total do seu fluxo financeiro. Simples, segura e profissional.</p>
-        <div class="hero-btns">
-          <a href="https://www.emprestfacil.app/" class="btn-primary">🚀 Teste grátis por 7 dias</a>
-          <a href="#precos" class="btn-outline">Ver planos →</a>
-        </div>
+
       </div>
 
       <!-- 3D SCENE -->
@@ -758,6 +755,12 @@
     </div>
   </div>
 </div><!-- /hero-sticky-outer -->
+
+<!-- ═══ HERO CTA BUTTONS ═══ -->
+<div style="display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;padding:2.5rem 5% 3rem;background:var(--dark);">
+  <a href="https://www.emprestfacil.app/?mode=cadastro" class="btn-primary" style="font-size:1.05rem;padding:1rem 2.2rem;">Teste grátis por 7 dias</a>
+  <a href="#precos" class="btn-outline" style="font-size:1.05rem;padding:1rem 2.2rem;">Ver planos →</a>
+</div>
 
 <!-- ═══ STATS ═══ -->
 <div class="stats">
@@ -872,7 +875,7 @@
         <li><span class="chk">✓</span> Suporte via e-mail</li>
         <li><span class="chk">✓</span> Relatórios simplificados</li>
       </ul>
-      <a href="https://www.emprestfacil.app/" class="plan-btn btn-basic">Começar com Basic</a>
+      <a href="https://www.emprestfacil.app/?mode=cadastro" class="plan-btn btn-basic">Começar com Basic</a>
     </div>
     <div class="plan popular reveal">
       <div class="popular-badge">⭐ MAIS POPULAR</div>
@@ -887,7 +890,7 @@
         <li><span class="chk">✓</span> Exportação de dados (Excel/PDF)</li>
         <li><span class="chk">✓</span> Suporte prioritário</li>
       </ul>
-      <a href="https://www.emprestfacil.app/" class="plan-btn btn-popular">Assinar Pro agora</a>
+      <a href="https://www.emprestfacil.app/?mode=cadastro" class="plan-btn btn-popular">Assinar Pro agora</a>
     </div>
     <div class="plan anual reveal">
       <div class="anual-badge">🥇 ECONOMIZE +30%</div>
@@ -901,7 +904,7 @@
         <li><span class="chk">✓</span> Novas funcionalidades primeiro</li>
         <li><span class="chk">✓</span> Suporte VIP 24/7</li>
       </ul>
-      <a href="https://www.emprestfacil.app/" class="plan-btn btn-anual">Garantir plano Anual</a>
+      <a href="https://www.emprestfacil.app/?mode=cadastro" class="plan-btn btn-anual">Garantir plano Anual</a>
     </div>
   </div>
 </section>
@@ -935,7 +938,7 @@
   <div style="position:relative;z-index:1">
     <h2 class="reveal">Pronto para organizar suas<br>finanças de vez?</h2>
     <p class="reveal">Junte-se a milhares que já trocaram o caderninho pelo EmprestFácil.</p>
-    <a href="https://www.emprestfacil.app/" class="btn-primary reveal" style="display:inline-flex">🚀 Teste grátis por 7 dias</a>
+    <a href="https://www.emprestfacil.app/?mode=cadastro" class="btn-primary reveal" style="display:inline-flex">🚀 Teste grátis por 7 dias</a>
   </div>
 </section>
 
@@ -944,14 +947,7 @@
   <div class="footer-top">
     <div class="footer-brand">
       <a href="https://www.emprestfacil.app/" class="footer-brand-logo">
-        <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="9" fill="url(#ftLogoGrad)"/>
-          <defs><linearGradient id="ftLogoGrad" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#0ea5e9"/></linearGradient></defs>
-          <path d="M10 10 H24 V14 H14 V18 H22 V22 H14 V26 H24 V30 H10 Z" fill="white" opacity=".9"/>
-          <line x1="27" y1="8" x2="27" y2="32" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
-          <line x1="23" y1="8" x2="31" y2="8" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".7"/>
-          <line x1="23" y1="32" x2="31" y2="32" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".7"/>
-        </svg>
+        <img src="./logo.png" alt="EmprestFácil Logo" style="width:44px;height:44px;object-fit:contain;">
         <div>
           <div class="footer-brand-logo-text">EmprestFácil</div>
           <div style="font-size:.65rem;color:var(--muted);margin-top:1px">Soluções Financeiras Ágeis</div>
