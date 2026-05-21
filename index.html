@@ -274,7 +274,7 @@
   .stats{
     display:flex;flex-wrap:wrap;
     border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-    margin-bottom:5rem;
+    margin-bottom:0;
     background:rgba(13,21,38,.9); /* More solid */
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
@@ -283,6 +283,98 @@
   .stat-item:last-child{border-right:none}
   .stat-num{font-size:2rem;font-weight:900;color:var(--blueL);letter-spacing:-.03em;line-height:1}
   .stat-label{font-size:.82rem;color:var(--muted);margin-top:.35rem;font-weight:400}
+
+  /* ═══ VIDEO DEMO ═══ */
+  .video-section{
+    padding:5rem 5% 5rem;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .video-inner{
+    max-width:860px;
+    margin:0 auto;
+  }
+  .video-head{
+    text-align:center;
+    margin-bottom:2.5rem;
+  }
+  .video-head .section-sub{
+    margin:0 auto;
+  }
+  .video-wrapper{
+    position:relative;
+    padding-bottom:56.25%; /* 16:9 aspect ratio */
+    height:0;
+    border-radius:18px;
+    border:1px solid var(--border);
+    box-shadow:0 0 50px rgba(37,99,235,.15);
+    overflow:hidden;
+    background:var(--card);
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .video-wrapper:hover{
+    transform:translateY(-4px);
+    border-color:rgba(37,99,235,.5);
+    box-shadow:0 12px 40px rgba(37,99,235,.25);
+  }
+  .video-wrapper iframe{
+    position:absolute;
+    border:0;
+    transition: all 0.4s ease;
+  }
+  /* Preview State: cropped and no pointer events */
+  .video-wrapper iframe.preview{
+    top:-9.5%;
+    left:-9.5%;
+    width:119%;
+    height:119%;
+    pointer-events:none;
+  }
+  /* Active State: full size with pointer events */
+  .video-wrapper iframe.active{
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:auto;
+  }
+  /* Overlay */
+  .video-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(6, 12, 26, 0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2;
+    transition:opacity 0.3s ease;
+  }
+  .video-wrapper:hover .video-overlay{
+    background:rgba(6, 12, 26, 0.2);
+  }
+  .video-btn{
+    background:var(--blue);
+    color:#fff;
+    border:none;
+    padding:0.9rem 1.8rem;
+    border-radius:50px;
+    font-size:0.95rem;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:0.6rem;
+    box-shadow:0 4px 20px rgba(37,99,235,0.4);
+    cursor:pointer;
+    transition:background 0.2s, transform 0.15s, box-shadow 0.2s;
+  }
+  .video-btn:hover{
+    background:var(--blue2);
+    transform:scale(1.05);
+    box-shadow:0 8px 30px rgba(37,99,235,0.6);
+  }
+  .video-btn svg{
+    flex-shrink:0;
+  }
 
   /* ═══ SECTIONS ═══ */
   .section-tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--blueL);text-transform:uppercase;margin-bottom:.7rem}
@@ -771,6 +863,35 @@
   <div class="stat-item reveal"><div class="stat-num">4.9★</div><div class="stat-label">Avaliação na loja</div></div>
 </div>
 
+<!-- ═══ VIDEO DEMO ═══ -->
+<section class="video-section reveal" id="video-demo">
+  <div class="video-inner">
+    <div class="video-head">
+      <p class="section-tag">Demonstração</p>
+      <h2 class="section-title">Veja como funciona na prática</h2>
+      <p class="section-sub">Assista ao vídeo abaixo para ver uma demonstração completa do sistema e de seus recursos.</p>
+    </div>
+    <div class="video-wrapper" id="videoWrapper">
+      <div class="video-overlay" id="videoOverlay">
+        <button class="video-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"></polygon>
+          </svg>
+          Assistir com Som
+        </button>
+      </div>
+      <iframe 
+        id="videoIframe"
+        class="preview"
+        src="https://www.youtube.com/embed/ijH-h58doww?autoplay=1&mute=1&loop=1&playlist=ijH-h58doww&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1" 
+        title="Demonstração do EmprestFácil" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ HOW IT WORKS ═══ -->
 <section class="how" id="como">
   <div class="how-inner">
@@ -1180,6 +1301,26 @@
     card.addEventListener('mouseleave', ()=>{
       card.style.transform = '';
     });
+  });
+})();
+
+/* ═══════════════════════════════════════════════
+   VIDEO INTERACTIVE HANDLER
+═══════════════════════════════════════════════ */
+(function(){
+  const wrapper = document.getElementById('videoWrapper');
+  const overlay = document.getElementById('videoOverlay');
+  const iframe  = document.getElementById('videoIframe');
+  if(!wrapper || !overlay || !iframe) return;
+
+  wrapper.addEventListener('click', ()=>{
+    if(iframe.classList.contains('preview')){
+      iframe.classList.remove('preview');
+      iframe.classList.add('active');
+      iframe.src = "https://www.youtube.com/embed/ijH-h58doww?autoplay=1&controls=1&modestbranding=1";
+      overlay.style.opacity = '0';
+      setTimeout(()=> overlay.style.display = 'none', 300);
+    }
   });
 })();
 </script>
